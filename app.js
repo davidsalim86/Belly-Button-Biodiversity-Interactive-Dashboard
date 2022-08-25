@@ -1,6 +1,6 @@
 // Dataset list
 function dropdown() {
-    d3.json("../../samples.json").then((incomingData) => {
+    d3.json("samples.json").then((incomingData) => {
         var data = incomingData;
         console.log(data)
         var name = data.names;
@@ -13,7 +13,7 @@ function dropdown() {
 
 // Demographic info
 function demoInfo(id) {
-    d3.json("../../samples.json").then((incomingData) => {
+    d3.json("samples.json").then((incomingData) => {
         var data = incomingData;
         var metadata = data.metadata;
         var metadataFilter = metadata.filter(x => x.id == id);
@@ -29,7 +29,7 @@ function demoInfo(id) {
 
 // Barchart
 function barchart(id) {
-    d3.json("../../samples.json").then((incomingData) => {
+    d3.json("samples.json").then((incomingData) => {
         var data = incomingData;
         var sample = data.samples;
         var sampleFilter = sample.filter(x => x.id == id)[0];
@@ -53,7 +53,7 @@ function barchart(id) {
 
 // Bubblechart
 function bubblechart(id) {
-    d3.json("../../samples.json").then((incomingData) => {
+    d3.json("samples.json").then((incomingData) => {
         var data = incomingData;
         var sample = data.samples;
         var sampleFilter = sample.filter(x => x.id == id)[0];
@@ -82,7 +82,7 @@ function bubblechart(id) {
 
 // Gauge (bonus part)
 function gauge(id) {
-    d3.json("../../samples.json").then((incomingData) => {
+    d3.json("samples.json").then((incomingData) => {
         var data = incomingData;
         var metadata = data.metadata;
         var metadataFilter = metadata.filter(x => x.id == id)[0];
