@@ -34,7 +34,8 @@ function barchart(id) {
         var sample = data.samples;
         var sampleFilter = sample.filter(x => x.id == id)[0];
         var otuIds = sampleFilter.otu_ids.slice(0, 10).reverse()
-        var otuIdsString = otuIds.map(x => `OTU ${x}`)
+        console.log(otuIds)
+        var otuIdsString = otuIds.map(x => `OTU -----------${x}`)
         var otuFreq = sampleFilter.sample_values.slice(0, 10).reverse()
         var otuLabels = sampleFilter.otu_labels.slice(0, 10).reverse()
         var barData = [{
@@ -45,7 +46,7 @@ function barchart(id) {
             orientation: "h"
         }];
         var layout = {
-            margin: { t: 50, l: 100 }
+            margin: { t: 50, l: 200 }
         };
         Plotly.newPlot("bar", barData, layout)
     })
